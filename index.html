@@ -2,6 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Social sharing meta tags for Facebook and Twitter -->
+    <meta property="og:title" content="Towers of Hanoi" />
+    <meta property="og:description" content="Play the retro Towers of Hanoi puzzle game!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Jr-star3/towerofhanoi/main/towerofhanoi-gameplay.png" />
+    <meta property="og:url" content="https://github.com/Jr-star3/towerofhanoi" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Towers of Hanoi" />
+    <meta name="twitter:description" content="Play the retro Towers of Hanoi puzzle game!" />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Jr-star3/towerofhanoi/main/towerofhanoi-gameplay.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Towers of Hanoi</title>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
@@ -298,7 +309,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
+        <!-- Social Share Buttons -->
+        <div style="display: flex; justify-content: center; gap: 10px; margin: 18px 0 10px 0; flex-wrap: wrap;">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://retrolab.fun/games/tictactoe.html" target="_blank" rel="noopener" title="Share on Facebook" style="background:#1877f3;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://twitter.com/intent/tweet?url=https://retrolab.fun/games/tictactoe.html&text=Try%20Tic%20Tac%20Toe%20on%20RetroLab!" target="_blank" rel="noopener" title="Share on Twitter" style="background:#1da1f2;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/twitter.svg" alt="Twitter" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://wa.me/?text=Try%20Tic%20Tac%20Toe%20on%20RetroLab!%20https://retrolab.fun/games/tictactoe.html" target="_blank" rel="noopener" title="Share on WhatsApp" style="background:#25d366;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://www.reddit.com/submit?url=https://retrolab.fun/games/tictactoe.html&title=Try%20Tic%20Tac%20Toe%20on%20RetroLab!" target="_blank" rel="noopener" title="Share on Reddit" style="background:#ff4500;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/reddit.svg" alt="Reddit" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://retrolab.fun/games/tictactoe.html" target="_blank" rel="noopener" title="Share on LinkedIn" style="background:#0077b5;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://t.me/share/url?url=https://retrolab.fun/games/tictactoe.html&text=Try%20Tic%20Tac%20Toe%20on%20RetroLab!" target="_blank" rel="noopener" title="Share on Telegram" style="background:#229ed9;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" style="width:22px;height:22px;filter:invert(1);"></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://retrolab.fun/games/tictactoe.html&media=&description=Try%20Tic%20Tac%20Toe%20on%20RetroLab!" target="_blank" rel="noopener" title="Share on Pinterest" style="background:#e60023;border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/pinterest.svg" alt="Pinterest" style="width:22px;height:22px;filter:invert(1);"></a>
+        </div>
+        <div class="container">
         <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
         <h1>Towers of Hanoi</h1>
         <div class="scoreboard">

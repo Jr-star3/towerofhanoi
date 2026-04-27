@@ -6,7 +6,7 @@
     <meta property="og:title" content="Towers of Hanoi" />
     <meta property="og:description" content="Play the retro Towers of Hanoi puzzle game!" />
     <meta property="og:image" content="https://raw.githubusercontent.com/Jr-star3/towerofhanoi/main/towerofhanoi-gameplay.png" />
-    <meta property="og:url" content="https://www.retrogame.tech" />
+    <meta property="og:url" content="https://www.retrogame.tech/towerofhanoi.html" />
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,6 +37,10 @@
             box-shadow: 0 0 32px #0ff8, 0 0 8px #000a;
             padding: 32px 32px 16px 32px;
             margin-top: 40px;
+            position: relative;
+            width: calc(100% - 32px);
+            max-width: 520px;
+            box-sizing: border-box;
         }
         h1 {
             margin-bottom: 20px;
@@ -222,6 +226,10 @@
             box-shadow: 0 0 24px #0ff8;
             margin-bottom: 16px;
             display: block;
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 420 / 220;
+            height: auto;
         }
         .instructions {
             background: #222;
@@ -305,6 +313,17 @@
         @keyframes slideDown {
             from { transform: translateX(-50%) translateY(-100%); }
             to { transform: translateX(-50%) translateY(0); }
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 14px; letter-spacing: 1px; }
+            .container { padding: 16px 12px 12px 12px; margin-top: 16px; }
+            .scoreboard { grid-template-columns: repeat(2, 1fr); font-size: 9px; gap: 8px; padding: 8px; }
+            .stats { grid-template-columns: repeat(2, 1fr); font-size: 8px; }
+            .achievements { font-size: 7px; }
+            .btn { font-size: 9px; padding: 10px 12px; }
+            .difficulty-btn { font-size: 7px; padding: 8px 6px; }
+            .instructions { font-size: 9px; padding: 8px 10px; }
+            .hint-text { font-size: 7px; }
         }
     </style>
 </head>
@@ -920,8 +939,9 @@
     
     canvas.addEventListener('mousemove', e => {
         const rect = canvas.getBoundingClientRect();
-        lastMouse.x = e.clientX - rect.left;
-        lastMouse.y = e.clientY - rect.top;
+        const cssScale = rect.width / canvas.width;
+        lastMouse.x = (e.clientX - rect.left) / cssScale;
+        lastMouse.y = (e.clientY - rect.top) / cssScale;
         if (heldDisk !== null) draw();
     });
 
@@ -929,8 +949,9 @@
         if (win || autoSolving) return;
         
         const rect = canvas.getBoundingClientRect();
-        const mx = e.clientX - rect.left;
-        const my = e.clientY - rect.top;
+        const cssScale = rect.width / canvas.width;
+        const mx = (e.clientX - rect.left) / cssScale;
+        const my = (e.clientY - rect.top) / cssScale;
         
         // Find which peg was clicked
         for (let p = 0; p < 3; p++) {
@@ -984,8 +1005,9 @@
     canvas.addEventListener('touchstart', function(e) {
         let touch = e.touches[0];
         let rect = canvas.getBoundingClientRect();
-        lastMouse.x = touch.clientX - rect.left;
-        lastMouse.y = touch.clientY - rect.top;
+        const cssScale = rect.width / canvas.width;
+        lastMouse.x = (touch.clientX - rect.left) / cssScale;
+        lastMouse.y = (touch.clientY - rect.top) / cssScale;
         canvas.dispatchEvent(new MouseEvent('mousedown', {
             clientX: touch.clientX,
             clientY: touch.clientY
@@ -996,8 +1018,9 @@
     canvas.addEventListener('touchmove', function(e) {
         let touch = e.touches[0];
         let rect = canvas.getBoundingClientRect();
-        lastMouse.x = touch.clientX - rect.left;
-        lastMouse.y = touch.clientY - rect.top;
+        const cssScale = rect.width / canvas.width;
+        lastMouse.x = (touch.clientX - rect.left) / cssScale;
+        lastMouse.y = (touch.clientY - rect.top) / cssScale;
         draw();
         e.preventDefault();
     }, {passive: false});
